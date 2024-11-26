@@ -27,7 +27,7 @@ public class DiscoController {
     @Autowired
     private IArtistaRepository artistaRepo;
 
-    // Agregar
+  
     @PostMapping(
         value = "/disco",
         consumes = MediaType.APPLICATION_JSON_VALUE,
@@ -41,7 +41,7 @@ public class DiscoController {
         return new ResponseEntity<>(temp, HttpStatus.CREATED);
     }
 
-    // Obtener
+ 
     @GetMapping(
         value = "/discos",
         produces = MediaType.APPLICATION_JSON_VALUE
@@ -51,7 +51,7 @@ public class DiscoController {
         return new ResponseEntity<>(discos, HttpStatus.OK);
     }
 
-    // Obtener id
+  
     @GetMapping(
         value = "/disco/{id}",
         produces = MediaType.APPLICATION_JSON_VALUE
@@ -62,7 +62,7 @@ public class DiscoController {
                    .orElseGet(() -> new ResponseEntity<>(null,null, HttpStatus.NOT_FOUND));
     }
 
-    // Obtener todo
+
     @GetMapping(
         value = "/artista/{id}/discos",
         produces = MediaType.APPLICATION_JSON_VALUE
